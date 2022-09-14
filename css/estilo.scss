@@ -1,0 +1,211 @@
+@import './menu.css';
+
+:root {
+    --primary: #52151B;
+    --chao: 9.68rem;
+    --natal: #DAA573;
+}
+
+/*
+==> Font
+
+font-family: playfair-display,serif;
+font-weight: 400;
+font-style: normal;
+
+*/
+
+body {
+    overscroll-behavior: none;
+    height: 100vh;
+}
+
+body,
+p,
+input,
+* {
+    font-family: montserrat, sans-serif;
+}
+
+
+.bg-app {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+
+    background: rgb(228, 3, 46);
+    background: radial-gradient(circle, rgba(228, 3, 46, 1) 0%, rgba(102, 31, 36, 1) 82%, rgba(57, 32, 28, 1) 100%);
+
+    z-index: -1;
+}
+
+.estrelas {
+    position: absolute;
+    width: 100vw;
+    height: 123px;
+    top: 0;
+
+    background: url('../img/estrelas.svg');
+    background-repeat: repeat-x;
+    opacity: .6;
+    z-index: 0;
+}
+
+.estrelas-animation {
+    position: absolute;
+    width: 100vw;
+    height: 123px;
+    top: 0;
+
+    background: url('../img/estrelas-animation.svg');
+    background-repeat: repeat-x;
+    opacity: 1;
+    z-index: 1;
+    transition: all 5s ease-in;
+    animation: blink-animation 5s infinite;
+    -webkit-animation: blink-animation 5s steps(5, start) infinite;
+}
+
+.abertura {
+    .texto {
+        width: 100%;
+        padding-top: calc(330px + 23%);
+        text-align: center;
+
+        .titulo{
+            width: 60%;
+            font-family: 'playfair-display',serif;
+            color: var(--natal);
+            font-size: 23px;
+            line-height: 1.12;
+            margin-bottom: 1rem;
+        }
+        
+        p{
+            font-size: 1rem;
+            width: 72%;
+            font-weight: 200;
+            line-height: 1.2;
+            b{
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+// // .fireworks-container {
+// //     padding-top: 280px;
+// }
+
+
+
+@keyframes blink-animation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.content-page {
+    overscroll-behavior: none;
+    width: 600%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.panel {
+    width: 380px;
+    height: 100%;
+
+    &.abertura {
+        width: 100vw;
+    }
+}
+
+.fireworks-container { 
+    position: absolute;
+    width: 100%;
+    z-index: 8;
+}
+
+.logo {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    img {
+        position: absolute;
+        width: 232px;
+        top: 10%;
+    }
+    z-index: 99;
+}
+
+.chao {
+    position: absolute;
+    width: 100%;
+    height: var(--chao);
+    bottom: 0;
+    background-color: var(--primary);
+    z-index: 8;
+}
+
+.tangua {
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+
+    background: url('../img/tangua.svg') no-repeat;
+    background-position: center bottom;
+    background-size: 62%;
+
+    z-index: 1;
+    bottom: calc(var(--chao) - 10px);
+}
+
+@media only screen and (max-width: 500px) {
+    .tangua {
+        background-size: 90%;
+    }
+}
+
+.plantas {
+    position: absolute;
+    width: 100%;
+    height: 22rem;
+    bottom: 0;
+
+    background: url('../img/araucaria.svg') no-repeat;
+    background-size: 550px;
+    background-repeat: repeat-x;
+}
+
+.arbusto {
+    position: absolute;
+    width: 100%;
+    height: 6rem;
+    bottom: 0;
+
+    background: url('../img/planta2.svg') no-repeat;
+    background-repeat: repeat-x;
+    z-index: 9;
+}

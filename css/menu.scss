@@ -1,0 +1,52 @@
+.menu {
+    position: fixed;
+    width: 1.8rem;
+    height: 4.81rem;
+    top: 10px;
+    z-index: 99;
+    background: var(--natal);
+
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    li {
+        color: var(--primary);
+        list-style: none;
+        &:last-child{
+            margin-bottom: 1rem;
+        }
+    }
+    
+    ol {
+        height: 100%;
+    }
+    ol>li>button {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        transition: all .3s ease-in;
+
+        &:hover {
+            background: linear-gradient(90deg, rgba(228, 3, 46, 1) 0%, rgba(102, 31, 36, 1) 76%, rgba(57, 32, 28, 1) 96%);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 8px #000;
+        }
+    }
+}
+
+.iconeMenu {
+    width: 100%;
+    height: 4.81rem;
+
+    transition: all .3s ease-in-out;
+}
+
+.hAuto {
+    width: auto;
+    height: auto;
+}
+
+.hide {
+    display: none;
+}
