@@ -8,6 +8,15 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+.menu::after {
+  position: absolute;
+  content: "..";
+  color: transparent;
+  width: 32px;
+  top: 0;
+  right: -24px;
+  background: url("../img/bolMenu.svg") no-repeat;
+}
 .menu li {
   color: var(--primary);
   list-style: none;
@@ -17,6 +26,7 @@
 }
 .menu ol {
   height: 100%;
+  transition: all 0.3s ease-in-out;
 }
 .menu ol > li > button {
   width: 2.4rem;

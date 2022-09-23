@@ -1,53 +1,75 @@
 @import './menu.css';
 :root {
   --primary: #52151B;
-  --chao: 9.68rem;
+  --secondary: #97263C;
+  --floor: 9.68rem;
   --natal: #DAA573;
+  --fontPadrao: montserrat, sans-serif;
+  --fontNatal: "playfair-display", serif;
 }
 
-/*
-==> Font
-
-font-family: playfair-display,serif;
-font-weight: 400;
-font-style: normal;
-
-*/
-body {
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
-  scroll-behavior: smooth;
-  height: 100vh;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 body,
 p,
-input,
-* {
-  font-family: montserrat, sans-serif;
+input {
+  font-family: var(--fontPadrao);
 }
 
-.bg-app {
+.floor {
   position: absolute;
-  width: 100vw;
-  height: 100%;
-  background: rgb(228, 3, 46);
-  background: radial-gradient(circle, rgb(228, 3, 46) 0%, rgb(102, 31, 36) 82%, rgb(57, 32, 28) 100%);
-  z-index: -1;
-}
-
-.estrelas {
-  position: absolute;
-  width: 100vw;
-  height: 123px;
-  top: 0;
-  background: url("../img/estrelas.svg");
-  background-repeat: repeat-x;
-  opacity: 0.6;
+  width: 100%;
+  height: var(--floor);
+  border-bottom: var(--floor) solid var(--primary);
+  bottom: 0;
   z-index: 0;
 }
 
-.estrelas-animation {
+.logoCTBA {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 1.8rem;
+  z-index: 9;
+}
+.logoCTBA img {
+  width: 3.4rem;
+}
+.logoCTBA span {
+  color: var(--natal);
+  font-size: 0.8rem;
+  font-family: var(--fontNatal);
+}
+
+.araucaria {
+  position: fixed;
+  width: 100%;
+  height: 22rem;
+  bottom: 0;
+}
+.araucaria span {
+  width: 1200%;
+  height: 22rem;
+  background: url("../img/araucaria.svg");
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: 90%;
+  opacity: 0.6;
+}
+
+.cloud {
+  position: absolute;
+  width: 100%;
+  height: 6rem;
+  background: url("../img/estrelas.svg");
+  background-repeat: repeat-x;
+}
+
+.cloud-animation {
   position: absolute;
   width: 100vw;
   height: 123px;
@@ -61,27 +83,193 @@ input,
   -webkit-animation: blink-animation 5s steps(5, start) infinite;
 }
 
-.abertura .texto {
+.logoSmall {
   width: 100%;
-  padding-top: calc(330px + 23%);
-  text-align: center;
+  height: 10.2rem;
+  background: url("../img/logoSmall.svg") no-repeat;
+  background-position: center center;
+  top: 6.2rem;
 }
-.abertura .texto .titulo {
-  width: 60%;
-  font-family: "playfair-display", serif;
+
+.fireworks-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -99;
+}
+
+.arbustos {
+  position: fixed;
+  width: 100%;
+  height: 10.4rem;
+  bottom: 0;
+  z-index: 9;
+  overflow: hidden;
+}
+.arbustos span {
+  width: 1200%;
+  height: 10.4rem;
+  background: url("../img/arbustos.svg");
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: 100%;
+}
+
+.btn-natal {
+  height: 42px;
+  background: var(--secondary);
   color: var(--natal);
-  font-size: 23px;
-  line-height: 1.12;
-  margin-bottom: 1rem;
-}
-.abertura .texto p {
+  border: none;
+  font-family: var(--fontNatal);
   font-size: 1rem;
-  width: 72%;
+  font-weight: bold;
+  line-height: 1.8;
+  padding: 0 0.9rem;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transition: all 0.3s ease-in;
+}
+.btn-natal:before {
+  content: "......";
+  width: 32px;
+  background: url("../img/btn-icon.svg") no-repeat;
+  background-size: 22px;
+  height: auto;
+  margin-left: -26px;
+  color: transparent;
+  align-items: center;
+  flex-direction: column;
+}
+.btn-natal:hover {
+  filter: contrast(175%);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.scene-wrap {
+  overflow: hidden;
+}
+
+.content-inner {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(228, 3, 46);
+  background: radial-gradient(circle, rgb(228, 3, 46) 0%, rgb(102, 31, 36) 82%, rgb(57, 32, 28) 100%);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.inner .scene {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  border-left: 1px solid white;
+}
+
+.topTexto {
+  margin-top: -1.25rem;
+}
+
+.texto {
+  width: 100%;
+}
+.texto .titulo {
+  width: 60%;
+  font-family: var(--fontNatal);
+  color: var(--natal);
+  font-size: 1.8rem;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+}
+.texto .subtitulo {
+  width: 60%;
+  font-family: var(--fontNatal);
+  color: var(--natal);
+  font-size: 1.43rem;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+.texto p {
+  font-size: 0.92rem;
+  width: 70%;
   font-weight: 200;
   line-height: 1.2;
 }
-.abertura .texto p b {
+.texto p b {
   font-weight: 600;
+}
+
+.abertura {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.abertura .logo {
+  position: absolute;
+  width: 218px;
+  margin-top: -20rem;
+}
+.abertura .tangua {
+  position: absolute;
+  width: 85%;
+  height: auto;
+  bottom: calc(var(--floor) - 3px);
+}
+.abertura .texto {
+  margin-top: 12rem;
+}
+
+.scene4 .passeio {
+  width: 76%;
+  height: auto;
+  bottom: calc(var(--floor) - 3px);
+}
+
+.scene5 .parqueNautico {
+  width: 100%;
+  bottom: 0;
+}
+
+.scene6 .palacioAvenida {
+  width: 80%;
+  bottom: calc(var(--floor) - 3px);
+}
+
+.scene7 .parqueTangua {
+  width: 80%;
+  bottom: calc(var(--floor) - 3px);
+}
+
+.scene8 .federal {
+  width: 80%;
+  bottom: calc(var(--floor) - 3px);
+}
+
+.scene9 .carrosselPasseio {
+  width: 85%;
+  bottom: calc(var(--floor) - 3px);
+}
+
+.scene10 .memorialParanista {
+  width: 85%;
+  bottom: calc(var(--floor) - 22px);
+}
+
+.scene11 .escola {
+  width: 82%;
+  bottom: 6.4rem;
+}
+
+.scene12 .musica {
+  width: 82%;
+  bottom: calc(var(--floor) - 3px);
 }
 
 @keyframes blink-animation {
@@ -106,84 +294,149 @@ input,
     opacity: 0;
   }
 }
-.content-page {
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
-  width: 600%;
-  height: 100%;
+.box {
+  position: absolute;
+  width: 100%;
+  height: 8rem;
+  bottom: 0;
   display: flex;
-  flex-wrap: nowrap;
-}
-
-.panel {
-  width: 380px;
-  height: 100%;
-}
-.panel.abertura {
-  width: 100vw;
-}
-
-.fireworks-container {
-  position: absolute;
-  width: 100%;
-  z-index: 8;
-}
-
-.logo {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  z-index: 99;
-}
-.logo img {
-  position: absolute;
-  width: 232px;
-  top: 10%;
-}
-
-.chao {
-  position: absolute;
-  width: 100%;
-  height: var(--chao);
-  bottom: 0;
-  background-color: var(--primary);
-  z-index: 8;
-}
-
-.tangua {
-  position: absolute;
-  width: 100%;
-  height: 30rem;
-  background: url("../img/tangua.svg") no-repeat;
-  background-position: center bottom;
-  background-size: 62%;
-  z-index: 1;
-  bottom: calc(var(--chao) - 10px);
-}
-
-@media only screen and (max-width: 500px) {
-  .tangua {
-    background-size: 90%;
-  }
-}
-.plantas {
-  position: absolute;
-  width: 100%;
-  height: 22rem;
-  bottom: 0;
-  background: url("../img/araucaria.svg") no-repeat;
-  background-size: 550px;
-  background-repeat: repeat-x;
-}
-
-.arbusto {
-  position: absolute;
-  width: 100%;
-  height: 6rem;
-  bottom: 0;
-  background: url("../img/planta2.svg") no-repeat;
-  background-repeat: repeat-x;
+  align-content: center;
+  justify-content: center;
   z-index: 9;
+}
+.box .box-circle svg {
+  width: 7.2rem;
+  height: auto;
+  filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.4));
+}
+
+circle {
+  width: auto;
+  height: auto;
+  fill: none;
+  stroke: black;
+  stroke-width: 3;
+  transform: translate(1px, 1px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: all 0.3s ease-in-out;
+}
+
+circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 4;
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+circle:nth-child(2) {
+  stroke: var(--natal);
+  transition: dashoffeset 0.05s ease-in-out;
+}
+
+@media only screen and (min-width: 500px) {
+  * {
+    font-size: 18px;
+  }
+  :root {
+    --floor: 3rem;
+  }
+  .floor {
+    border-bottom: var(--floor) solid var(--primary);
+  }
+  .arbustos {
+    height: 6.4rem;
+  }
+  .arbustos span {
+    background-size: contain;
+  }
+  .logoCTBA {
+    bottom: 1.18rem;
+  }
+  .logoCTBA span {
+    font-size: 0.72rem;
+    display: flex;
+    align-content: center;
+  }
+  .araucaria {
+    height: 18rem;
+  }
+  .araucaria span {
+    background-size: contain;
+  }
+  .logoSmall {
+    top: 4.2rem;
+  }
+  .abertura .tangua {
+    width: 45%;
+  }
+  .abertura .texto {
+    margin-top: 4rem;
+  }
+  .abertura .texto p {
+    width: 42%;
+  }
+  .box {
+    height: 6.8rem;
+  }
+  .box .box-circle svg {
+    width: calc(5.78rem + 12px);
+  }
+  .texto .titulo {
+    margin-top: 2.8rem;
+  }
+  .texto p {
+    width: 50%;
+  }
+  .topTexto {
+    margin-top: -2rem;
+  }
+  .scene3 .texto {
+    width: 100%;
+  }
+  .scene3 .texto p {
+    width: 60%;
+  }
+  .scene2 .texto {
+    width: 60%;
+  }
+  .scene4 .passeio {
+    width: 38%;
+  }
+  .scene5 .parqueNautico {
+    width: 100%;
+    bottom: -528px;
+  }
+  .scene6 .texto + .texto {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-right: 4rem;
+  }
+  .scene6 .palacioAvenida {
+    width: 50%;
+    bottom: calc(var(--floor) - 3px);
+    left: 2rem;
+  }
+  .scene7 .parqueTangua {
+    width: 42%;
+  }
+  .scene8 .federal {
+    width: 60%;
+  }
+  .scene9 .carrosselPasseio {
+    width: 52%;
+  }
+  .scene10 .memorialParanista {
+    width: 42%;
+    bottom: calc(var(--floor) - 30px);
+  }
+  .scene11 .escola {
+    width: 44%;
+    bottom: -3.6rem;
+    right: 1rem;
+  }
+  .scene12 .musica {
+    width: 48%;
+    left: 3rem;
+  }
 }/*# sourceMappingURL=estilo.css.map */

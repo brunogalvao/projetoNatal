@@ -22,8 +22,18 @@ cenario.map(item => {
     liMenu.classList.add('p-2', 'd-flex', 'align-items-center', 'justify-content-center')
     btnMenu.classList.add('rounded-pill', 'border-0', 'bg-gradient')
 
+    btnMenu.setAttribute('id', item.id)
+
     // inserindo o texto
     btnMenu.textContent = item.name;
+
+    btnMenu.addEventListener('click', () => {
+        
+        const valor = btnMenu.textContent;
+
+        document.querySelector('#scene' + valor).scrollIntoView({behavior: 'smooth'});
+
+    })
 
 })
 
@@ -32,7 +42,7 @@ const liMenu = document.createElement('li');
 const btnMenu = document.createElement('button');
 
 
-iconeMenu.innerHTML = '<i class="fa-solid fa-chevron-right fa-lg text-white icoMenu"></i>';
+iconeMenu.innerHTML = '<i class="ph-caret-right-bold text-white fs-1"></i>';
 iconeMenu.classList.add('d-flex', 'align-items-center', 'justify-content-center');
 
 menu.classList.add('d-none');
@@ -45,36 +55,13 @@ iconeMenu.addEventListener('click', () => {
 
         menu.classList.remove('d-none');
 
-        iconeMenu.innerHTML = '<i class="fa-solid fa-chevron-left fa-lg text-white icoMenu"></i>';
+        iconeMenu.innerHTML = '<i class="ph-caret-left-bold text-white fs-1"></i>';
         click.classList.add('hAuto');
 
     } else {
         click.classList.remove('hAuto');
-        // menu.appendChild(liMenu).classList.add('d-flex', 'justify-content-center');
-        iconeMenu.innerHTML = '<i class="fa-solid fa-chevron-right fa-lg text-white icoMenu"></i>';
+        iconeMenu.innerHTML = '<i class="ph-caret-right-bold text-white fs-1"></i>';
         menu.classList.add('d-none');
     }
 
 });
-
-
-
-
-// ==> Expressão com forEach
-
-// cenario.forEach(function(item) {
-
-//     const liMenu = document.createElement('li');
-//     const btnMenu = document.createElement('button');
-
-//     menu.appendChild(liMenu);
-//     liMenu.appendChild(btnMenu);
-
-//     // class
-//     liMenu.classList.add('p-2', 'd-flex', 'align-items-center', 'justify-content-center')
-//     btnMenu.classList.add('rounded-pill', 'border-0', 'bg-gradient') 
-
-//     // inserindo o texto 
-//     btnMenu.textContent = item.name;
-
-// })

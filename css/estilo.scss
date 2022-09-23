@@ -1,211 +1,548 @@
 @import './menu.css';
 
 :root {
-    --primary: #52151B;
-    --chao: 9.68rem;
-    --natal: #DAA573;
+  --primary: #52151B;
+  --secondary: #97263C;
+  --floor: 9.68rem;
+  --natal: #DAA573;
+  --fontPadrao: montserrat, sans-serif;
+  --fontNatal: 'playfair-display', serif;
 }
 
-/*
-==> Font
-
-font-family: playfair-display,serif;
-font-weight: 400;
-font-style: normal;
-
-*/
-
-body {
-    overscroll-behavior: none;
-    height: 100vh;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 body,
 p,
-input,
-* {
-    font-family: montserrat, sans-serif;
+input {
+  font-family: var(--fontPadrao);
+}
+
+// assets
+.floor {
+  position: absolute;
+  width: 100%;
+  height: var(--floor);
+  border-bottom: var(--floor) solid var(--primary);
+  bottom: 0;
+  z-index: 0;
 }
 
 
-.bg-app {
-    position: absolute;
-    width: 100vw;
-    height: 100%;
+.logoCTBA {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 1.8rem;
+  z-index: 9;
 
-    background: rgb(228, 3, 46);
-    background: radial-gradient(circle, rgba(228, 3, 46, 1) 0%, rgba(102, 31, 36, 1) 82%, rgba(57, 32, 28, 1) 100%);
+  img {
+    width: 3.4rem;
+  }
 
-    z-index: -1;
+  span {
+    color: var(--natal);
+    font-size: .8rem;
+    font-family: var(--fontNatal);
+  }
 }
 
-.estrelas {
-    position: absolute;
-    width: 100vw;
-    height: 123px;
-    top: 0;
+.araucaria {
+  position: fixed;
+  width: 100%;
+  height: 22rem;
+  bottom: 0;
 
-    background: url('../img/estrelas.svg');
+  span {
+    width: 1200%;
+    height: 22rem;
+    background: url('../img/araucaria.svg');
     background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: 90%;
     opacity: .6;
-    z-index: 0;
+  }
 }
 
-.estrelas-animation {
-    position: absolute;
-    width: 100vw;
-    height: 123px;
-    top: 0;
 
-    background: url('../img/estrelas-animation.svg');
+.cloud {
+  position: absolute;
+  width: 100%;
+  height: 6rem;
+  background: url('../img/estrelas.svg');
+  background-repeat: repeat-x;
+}
+
+
+.cloud-animation {
+  position: absolute;
+  width: 100vw;
+  height: 123px;
+  top: 0;
+
+  background: url('../img/estrelas-animation.svg');
+  background-repeat: repeat-x;
+  opacity: 1;
+  z-index: 1;
+  transition: all 5s ease-in;
+  animation: blink-animation 5s infinite;
+  -webkit-animation: blink-animation 5s steps(5, start) infinite;
+}
+
+.logoSmall {
+  width: 100%;
+  height: 10.2rem;
+  background: url('../img/logoSmall.svg') no-repeat;
+  background-position: center center;
+  top: 6.2rem;
+}
+
+.fireworks-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -99;
+}
+
+
+.arbustos {
+  position: fixed;
+  width: 100%;
+  height: 10.4rem;
+  bottom: 0;
+  z-index: 9;
+
+  overflow: hidden;
+
+  span {
+    width: 1200%;
+    height: 10.4rem;
+    background: url('../img/arbustos.svg');
     background-repeat: repeat-x;
-    opacity: 1;
-    z-index: 1;
-    transition: all 5s ease-in;
-    animation: blink-animation 5s infinite;
-    -webkit-animation: blink-animation 5s steps(5, start) infinite;
+    background-position: bottom center;
+    background-size: 100%;
+  }
 }
+
+
+.btn-natal {
+  height: 42px;
+  background: var(--secondary);
+  color: var(--natal);
+  border: none;
+  font-family: var(--fontNatal);
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.8;
+  padding: 0 .9rem;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transition: all .3s ease-in;
+
+  &:before {
+    content: '......';
+    width: 32px;
+    background: url('../img/btn-icon.svg') no-repeat;
+    background-size: 22px;
+    height: auto;
+    margin-left: -26px;
+    color: transparent;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &:hover {
+    filter: contrast(175%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.scene-wrap {
+  overflow: hidden;
+}
+
+.content-inner {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(228, 3, 46);
+  background: radial-gradient(circle, rgba(228, 3, 46, 1) 0%, rgba(102, 31, 36, 1) 82%, rgba(57, 32, 28, 1) 100%);
+}
+
+
+.inner {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .scene {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+    border-left: 1px solid white;
+  }
+}
+
+
+.topTexto {
+  margin-top: -1.25rem;
+}
+
+
+.texto {
+  width: 100%;
+
+  .titulo {
+    width: 60%;
+    font-family: var(--fontNatal);
+    color: var(--natal);
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: .8rem;
+  }
+
+  .subtitulo {
+    width: 60%;
+    font-family: var(--fontNatal);
+    color: var(--natal);
+    font-size: 1.43rem;
+    line-height: 1.1;
+    margin-bottom: .8rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: .92rem;
+    width: 70%;
+    font-weight: 200;
+    line-height: 1.2;
+
+    b {
+      font-weight: 600;
+    }
+  }
+}
+
 
 .abertura {
-    .texto {
-        width: 100%;
-        padding-top: calc(330px + 23%);
-        text-align: center;
+  width: 100%;
+  height: 100%;
 
-        .titulo{
-            width: 60%;
-            font-family: 'playfair-display',serif;
-            color: var(--natal);
-            font-size: 23px;
-            line-height: 1.12;
-            margin-bottom: 1rem;
-        }
-        
-        p{
-            font-size: 1rem;
-            width: 72%;
-            font-weight: 200;
-            line-height: 1.2;
-            b{
-                font-weight: 600;
-            }
-        }
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo {
+    position: absolute;
+    width: 218px;
+    margin-top: -20rem;
+  }
+
+  .tangua {
+    position: absolute;
+    width: 85%;
+    height: auto;
+    bottom: calc(var(--floor) - 3px);
+  }
+
+  .texto {
+    margin-top: 12rem;
+  }
 }
 
-// // .fireworks-container {
-// //     padding-top: 280px;
-// }
+.scene4 {
+  .passeio {
+    width: 76%;
+    height: auto;
+    bottom: calc(var(--floor) - 3px);
+  }
+}
 
+.scene5 {
+  .parqueNautico {
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+.scene6 {
+  .palacioAvenida {
+    width: 80%;
+    bottom: calc(var(--floor) - 3px);
+  }
+}
+
+.scene7 {
+  .parqueTangua {
+    width: 80%;
+    bottom: calc(var(--floor) - 3px);
+  }
+}
+
+.scene8 {
+  .federal {
+    width: 80%;
+    bottom: calc(var(--floor) - 3px);
+  }
+}
+
+.scene9 {
+  .carrosselPasseio {
+    width: 85%;
+    bottom: calc(var(--floor) - 3px);
+  }
+}
+
+.scene10 {
+  .memorialParanista {
+    width: 85%;
+    bottom: calc(var(--floor) - 22px);
+  }
+}
+
+.scene11 {
+  .escola {
+    width: 82%;
+    bottom: 6.4rem;
+  }
+}
+
+.scene12 {
+  .musica {
+    width: 82%;
+    bottom: calc(var(--floor) - 3px);
+  }
+}
 
 
 @keyframes blink-animation {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes blink-animation {
-    0% {
-        opacity: 0;
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.box {
+  position: absolute;
+  width: 100%;
+  height: 8rem;
+  bottom: 0;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  z-index: 9;
+
+  .box-circle {
+    svg {
+      width: 7.2rem;
+      height: auto;
+      filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
     }
-    50% {
-        opacity: 1;
+  }
+}
+
+circle {
+  width: auto;
+  height: auto;
+  fill: none;
+  stroke: black;
+  stroke-width: 3;
+  transform: translate(1px, 1px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: all .3s ease-in-out;
+}
+
+circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 4;
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+circle:nth-child(2) {
+  stroke: var(--natal);
+  transition: dashoffeset .05s ease-in-out;
+}
+
+@media only screen and (min-width: 500px) {
+  * {
+    font-size: 18px;
+  }
+
+  :root {
+    --floor: 3rem;
+  }
+
+  .floor {
+    border-bottom: var(--floor) solid var(--primary);
+  }
+
+  .arbustos {
+    height: 6.4rem;
+
+    span {
+      background-size: contain;
     }
-    100% {
-        opacity: 0;
+  }
+
+  .logoCTBA {
+    bottom: 1.18rem;
+    span{
+      font-size: .72rem;
+      display: flex;
+      align-content: center;
     }
-}
+  }
 
-.content-page {
-    overscroll-behavior: none;
-    width: 600%;
-    height: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.panel {
-    width: 380px;
-    height: 100%;
-
-    &.abertura {
-        width: 100vw;
+  .araucaria {
+    height: 18rem;
+    span {
+      background-size: contain;
     }
-}
+  }
 
-.fireworks-container { 
-    position: absolute;
-    width: 100%;
-    z-index: 8;
-}
+  .logoSmall {
+    top: 4.2rem;
+  }
 
-.logo {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    img {
-        position: absolute;
-        width: 232px;
-        top: 10%;
-    }
-    z-index: 99;
-}
-
-.chao {
-    position: absolute;
-    width: 100%;
-    height: var(--chao);
-    bottom: 0;
-    background-color: var(--primary);
-    z-index: 8;
-}
-
-.tangua {
-    position: absolute;
-    width: 100%;
-    height: 30rem;
-
-    background: url('../img/tangua.svg') no-repeat;
-    background-position: center bottom;
-    background-size: 62%;
-
-    z-index: 1;
-    bottom: calc(var(--chao) - 10px);
-}
-
-@media only screen and (max-width: 500px) {
+  .abertura {
     .tangua {
-        background-size: 90%;
+      width: 45%;
     }
-}
 
-.plantas {
-    position: absolute;
-    width: 100%;
-    height: 22rem;
-    bottom: 0;
+    .texto {
+      margin-top: 4rem;
+      p { width: 42%; } 
+    }
+  }
 
-    background: url('../img/araucaria.svg') no-repeat;
-    background-size: 550px;
-    background-repeat: repeat-x;
-}
+  .box {
+    height: 6.8rem;
+    .box-circle {
+      svg{
+        width: calc(5.78rem + 12px);
+      }
+    }
+  }
 
-.arbusto {
-    position: absolute;
-    width: 100%;
-    height: 6rem;
-    bottom: 0;
+  .texto {
+    .titulo{
+      margin-top: 2.8rem;
+    }
+    p {
+      width: 50%;
+    }
+  }
 
-    background: url('../img/planta2.svg') no-repeat;
-    background-repeat: repeat-x;
-    z-index: 9;
+  .topTexto {
+    margin-top: -2rem;
+  }
+
+  .scene3 {
+    .texto {
+      width: 100%;
+      p {width: 60%;}
+    }
+  }
+
+  .scene2 {
+    .texto {
+      width: 60%;
+    }
+  }
+  .scene4 {
+    .passeio {
+      width: 38%;
+    }
+  }
+
+  .scene5 {
+    .parqueNautico {
+      width: 100%;
+      bottom: -528px;
+    }
+  }
+
+  .scene6 {
+    .texto + .texto {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      padding-right: 4rem;
+    }
+    .palacioAvenida {
+      width: 50%;
+      bottom: calc(var(--floor) - 3px);
+      left: 2rem;
+    }
+  }
+
+  .scene7 {
+    .parqueTangua {
+      width: 42%;
+    }
+  }
+
+  .scene8 {
+    .federal {
+      width: 60%;
+    }
+  }
+
+  .scene9 {
+    .carrosselPasseio {
+      width: 52%;
+    } 
+  }
+
+  .scene10 {
+    .memorialParanista {
+      width: 42%;
+      bottom: calc(var(--floor) - 30px);
+    }
+  }
+
+  .scene11 {
+    .escola {
+      width: 44%;
+      bottom: -3.6rem;
+      right: 1rem;
+    }
+  }
+
+  .scene12 {
+    .musica {
+      width: 48%;
+      left: 3rem;
+    }
+  }
+
 }
