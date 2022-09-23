@@ -245,6 +245,11 @@ input {
   bottom: 0;
 }
 
+.scene6 .texto {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .scene6 .palacioAvenida {
   width: 80%;
   bottom: calc(var(--floor) - 3px);
@@ -382,6 +387,7 @@ circle:nth-child(2) {
     font-size: 0.72rem;
     display: flex;
     align-content: center;
+    transition: all 0.3s ease-in;
   }
   .araucaria {
     height: 18rem;
@@ -482,6 +488,10 @@ circle:nth-child(2) {
   .abertura .tangua {
     width: 42rem;
   }
+  .scene2 .arvoreNatal {
+    width: 30rem;
+    right: -15rem;
+  }
   .scene4 .passeio {
     width: calc(42rem - 80px);
   }
@@ -491,11 +501,19 @@ circle:nth-child(2) {
   .scene6 .palacioAvenida {
     width: 42rem;
   }
+  .scene7 .rodaGigante {
+    width: 30rem;
+    right: -15rem;
+  }
   .scene7 .parqueTangua {
     width: 42rem;
   }
   .scene8 .federal {
     width: calc(42rem + 200px);
+  }
+  .scene9 .cavaloCarrossel {
+    width: 30rem;
+    right: -15rem;
   }
   .scene9 .carrosselPasseio {
     width: 42rem;

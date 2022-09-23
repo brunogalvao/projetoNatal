@@ -281,6 +281,11 @@ input {
 }
 
 .scene6 {
+  .texto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
   .palacioAvenida {
     width: 80%;
     bottom: calc(var(--floor) - 3px);
@@ -443,6 +448,7 @@ circle:nth-child(2) {
       font-size: .72rem;
       display: flex;
       align-content: center;
+      transition: all .3s ease-in;
     }
   }
 
@@ -606,6 +612,13 @@ circle:nth-child(2) {
     }
   }
 
+  .scene2 {
+    .arvoreNatal {
+      width: 30rem;
+      right: -15rem;
+    }
+  }
+
   .scene4 {
     .passeio {
       width: calc($larguraLG - 80px);
@@ -626,6 +639,10 @@ circle:nth-child(2) {
   }
 
   .scene7 {
+    .rodaGigante {
+      width: 30rem;
+      right: -15rem;
+    }
     .parqueTangua {
       width: $larguraLG;
     }
@@ -636,8 +653,12 @@ circle:nth-child(2) {
       width: calc($larguraLG + 200px);
     }
   }
-
+  
   .scene9 {
+    .cavaloCarrossel {
+      width: 30rem;
+      right: -15rem;
+    }
     .carrosselPasseio {
       width: $larguraLG;
     }
