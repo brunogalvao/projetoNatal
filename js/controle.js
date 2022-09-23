@@ -119,6 +119,7 @@ if (pinnedImageWrappers) {
     const palacioAvenida = document.querySelector('.palacioAvenida');
     const arvoreNatal = document.querySelector('.arvoreNatal');
     const rodaGigante = document.querySelector('.rodaGigante');
+    const cavaloCarrossel = document.querySelector('.cavaloCarrossel');
 
     let duration = 10,
       sections = gsap.utils.toArray(".scene"),
@@ -218,6 +219,10 @@ if (pinnedImageWrappers) {
     });
 
     gsap.to(rodaGigante, {
+      position: 'absolute',
+    });
+
+    gsap.to(cavaloCarrossel, {
       position: 'absolute',
     });
 
