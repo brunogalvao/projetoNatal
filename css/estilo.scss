@@ -3,10 +3,11 @@
 :root {
   --primary: #52151B;
   --secondary: #97263C;
-  --floor: 9.68rem;
+  --floor: 8.4rem;
   --natal: #DAA573;
   --fontPadrao: montserrat, sans-serif;
   --fontNatal: 'playfair-display', serif;
+  --alturaCirculo: 7.6rem;
 }
 
 * {
@@ -62,7 +63,7 @@ input {
     background: url('../img/araucaria.svg');
     background-repeat: repeat-x;
     background-position: bottom center;
-    background-size: 90%;
+    background-size: contain;
     opacity: .6;
   }
 }
@@ -119,11 +120,11 @@ input {
 
   span {
     width: 1200%;
-    height: 10.4rem;
+    height: 100%;
     background: url('../img/arbustos.svg');
     background-repeat: repeat-x;
-    background-position: bottom center;
-    background-size: 100%;
+    background-position: bottom left;
+    background-size: contain;
   }
 }
 
@@ -255,6 +256,15 @@ input {
   }
 }
 
+.scene2 {
+  .arvoreNatal {
+    bottom: 0;
+    right: -11rem;
+    width: 22rem;
+    bottom: calc(var(--floor) - 3px);
+  }
+}
+
 .scene4 {
   .passeio {
     width: 76%;
@@ -280,6 +290,12 @@ input {
 .scene7 {
   .parqueTangua {
     width: 80%;
+    bottom: calc(var(--floor) - 3px);
+  }
+
+  .rodaGigante{
+    width: 18rem;
+    right: -9rem;
     bottom: calc(var(--floor) - 3px);
   }
 }
@@ -351,7 +367,7 @@ input {
 .box {
   position: absolute;
   width: 100%;
-  height: 8rem;
+  height: var(--alturaCirculo);
   bottom: 0;
 
   display: flex;
@@ -362,7 +378,7 @@ input {
 
   .box-circle {
     svg {
-      width: 7.2rem;
+      width: calc(var(--alturaCirculo) - 4px);
       height: auto;
       filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
     }
@@ -392,7 +408,7 @@ circle:nth-child(2) {
   transition: dashoffeset .05s ease-in-out;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 500px) and (max-width: 980px) {
   * {
     font-size: 18px;
   }
@@ -415,7 +431,8 @@ circle:nth-child(2) {
 
   .logoCTBA {
     bottom: 1.18rem;
-    span{
+
+    span {
       font-size: .72rem;
       display: flex;
       align-content: center;
@@ -424,6 +441,7 @@ circle:nth-child(2) {
 
   .araucaria {
     height: 18rem;
+
     span {
       background-size: contain;
     }
@@ -439,24 +457,29 @@ circle:nth-child(2) {
     }
 
     .texto {
-      margin-top: 4rem;
-      p { width: 42%; } 
+      margin-top: 8.4rem;
+
+      p {
+        width: 42%;
+      }
     }
   }
 
   .box {
     height: 6.8rem;
+
     .box-circle {
-      svg{
+      svg {
         width: calc(5.78rem + 12px);
       }
     }
   }
 
   .texto {
-    .titulo{
+    .titulo {
       margin-top: 2.8rem;
     }
+
     p {
       width: 50%;
     }
@@ -469,7 +492,10 @@ circle:nth-child(2) {
   .scene3 {
     .texto {
       width: 100%;
-      p {width: 60%;}
+
+      p {
+        width: 60%;
+      }
     }
   }
 
@@ -478,6 +504,7 @@ circle:nth-child(2) {
       width: 60%;
     }
   }
+
   .scene4 {
     .passeio {
       width: 38%;
@@ -492,12 +519,13 @@ circle:nth-child(2) {
   }
 
   .scene6 {
-    .texto + .texto {
+    .texto+.texto {
       display: flex;
       align-items: flex-end;
       flex-direction: column;
       padding-right: 4rem;
     }
+
     .palacioAvenida {
       width: 50%;
       bottom: calc(var(--floor) - 3px);
@@ -520,7 +548,7 @@ circle:nth-child(2) {
   .scene9 {
     .carrosselPasseio {
       width: 52%;
-    } 
+    }
   }
 
   .scene10 {
@@ -544,5 +572,94 @@ circle:nth-child(2) {
       left: 3rem;
     }
   }
+}
 
+@media only screen and (min-width: 981px) {
+  $larguraLG: 42rem;
+
+  .topTexto {
+    margin-top: -11.25rem;
+  }
+
+  .logoCTBA {
+    bottom: 1.58rem;
+  }
+
+  .abertura {
+    .logo {
+      margin-top: -24rem;
+    }
+
+    .texto {
+      margin-top: 4rem;
+    }
+
+    .tangua {
+      width: $larguraLG;
+    }
+  }
+
+  .scene4 {
+    .passeio {
+      width: calc($larguraLG - 80px);
+      // width: $larguraLG;
+    }
+  }
+
+  .scene5 {
+    .parqueNautico {
+      bottom: -16.52rem;
+    }
+  }
+
+  .scene6 {
+    .palacioAvenida {
+      width: $larguraLG;
+    }
+  }
+
+  .scene7 {
+    .parqueTangua {
+      width: $larguraLG;
+    }
+  }
+
+  .scene8 {
+    .federal {
+      width: calc($larguraLG + 200px);
+    }
+  }
+
+  .scene9 {
+    .carrosselPasseio {
+      width: $larguraLG;
+    }
+  }
+
+  .scene10 {
+    .memorialParanista {
+      width: $larguraLG;
+      bottom: calc(var(--floor) - 41px);
+    }
+  }
+
+  .scene11 {
+    .escola {
+      width: $larguraLG;
+      bottom: 1.9rem;
+      left: -10rem;
+    }
+  }
+
+  .scene12 {
+    .musica {
+      width: calc($larguraLG - 120px);
+    }
+  }
+
+  .scene15 {
+    .topTexto {
+      margin-top: .75rem;
+    }
+  }
 }

@@ -117,6 +117,8 @@ if (pinnedImageWrappers) {
     const memorialParanista = document.querySelector('.memorialParanista');
     const musica = document.querySelector('.musica');
     const palacioAvenida = document.querySelector('.palacioAvenida');
+    const arvoreNatal = document.querySelector('.arvoreNatal');
+    const rodaGigante = document.querySelector('.rodaGigante');
 
     let duration = 10,
       sections = gsap.utils.toArray(".scene"),
@@ -139,7 +141,7 @@ if (pinnedImageWrappers) {
     });
 
     gsap.to(araucaria, {
-      x: -380,
+      x: -280,
       position: 'absolute',
       ease: 'none',
       scrollTrigger: {
@@ -155,7 +157,7 @@ if (pinnedImageWrappers) {
 
 
     gsap.to(arbustos, {
-      x: -200,
+      x: -980,
       position: 'absolute',
       ease: 'none',
       scrollTrigger: {
@@ -208,6 +210,14 @@ if (pinnedImageWrappers) {
     });
 
     gsap.to(palacioAvenida, {
+      position: 'absolute',
+    });
+
+    gsap.to(arvoreNatal, {
+      position: 'absolute',
+    });
+
+    gsap.to(rodaGigante, {
       position: 'absolute',
     });
 

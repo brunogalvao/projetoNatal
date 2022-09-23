@@ -2,10 +2,11 @@
 :root {
   --primary: #52151B;
   --secondary: #97263C;
-  --floor: 9.68rem;
+  --floor: 8.4rem;
   --natal: #DAA573;
   --fontPadrao: montserrat, sans-serif;
   --fontNatal: "playfair-display", serif;
+  --alturaCirculo: 7.6rem;
 }
 
 * {
@@ -57,7 +58,7 @@ input {
   background: url("../img/araucaria.svg");
   background-repeat: repeat-x;
   background-position: bottom center;
-  background-size: 90%;
+  background-size: contain;
   opacity: 0.6;
 }
 
@@ -108,11 +109,11 @@ input {
 }
 .arbustos span {
   width: 1200%;
-  height: 10.4rem;
+  height: 100%;
   background: url("../img/arbustos.svg");
   background-repeat: repeat-x;
-  background-position: bottom center;
-  background-size: 100%;
+  background-position: bottom left;
+  background-size: contain;
 }
 
 .btn-natal {
@@ -226,6 +227,13 @@ input {
   margin-top: 12rem;
 }
 
+.scene2 .arvoreNatal {
+  bottom: 0;
+  right: -11rem;
+  width: 22rem;
+  bottom: calc(var(--floor) - 3px);
+}
+
 .scene4 .passeio {
   width: 76%;
   height: auto;
@@ -244,6 +252,11 @@ input {
 
 .scene7 .parqueTangua {
   width: 80%;
+  bottom: calc(var(--floor) - 3px);
+}
+.scene7 .rodaGigante {
+  width: 18rem;
+  right: -9rem;
   bottom: calc(var(--floor) - 3px);
 }
 
@@ -297,7 +310,7 @@ input {
 .box {
   position: absolute;
   width: 100%;
-  height: 8rem;
+  height: var(--alturaCirculo);
   bottom: 0;
   display: flex;
   align-content: center;
@@ -305,7 +318,7 @@ input {
   z-index: 9;
 }
 .box .box-circle svg {
-  width: 7.2rem;
+  width: calc(var(--alturaCirculo) - 4px);
   height: auto;
   filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.4));
 }
@@ -333,7 +346,7 @@ circle:nth-child(2) {
   transition: dashoffeset 0.05s ease-in-out;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 500px) and (max-width: 980px) {
   * {
     font-size: 18px;
   }
@@ -370,7 +383,7 @@ circle:nth-child(2) {
     width: 45%;
   }
   .abertura .texto {
-    margin-top: 4rem;
+    margin-top: 8.4rem;
   }
   .abertura .texto p {
     width: 42%;
@@ -438,5 +451,55 @@ circle:nth-child(2) {
   .scene12 .musica {
     width: 48%;
     left: 3rem;
+  }
+}
+@media only screen and (min-width: 981px) {
+  .topTexto {
+    margin-top: -11.25rem;
+  }
+  .logoCTBA {
+    bottom: 1.58rem;
+  }
+  .abertura .logo {
+    margin-top: -24rem;
+  }
+  .abertura .texto {
+    margin-top: 4rem;
+  }
+  .abertura .tangua {
+    width: 42rem;
+  }
+  .scene4 .passeio {
+    width: calc(42rem - 80px);
+  }
+  .scene5 .parqueNautico {
+    bottom: -16.52rem;
+  }
+  .scene6 .palacioAvenida {
+    width: 42rem;
+  }
+  .scene7 .parqueTangua {
+    width: 42rem;
+  }
+  .scene8 .federal {
+    width: calc(42rem + 200px);
+  }
+  .scene9 .carrosselPasseio {
+    width: 42rem;
+  }
+  .scene10 .memorialParanista {
+    width: 42rem;
+    bottom: calc(var(--floor) - 41px);
+  }
+  .scene11 .escola {
+    width: 42rem;
+    bottom: 1.9rem;
+    left: -10rem;
+  }
+  .scene12 .musica {
+    width: calc(42rem - 120px);
+  }
+  .scene15 .topTexto {
+    margin-top: 0.75rem;
   }
 }/*# sourceMappingURL=estilo.css.map */
