@@ -3,11 +3,12 @@
 :root {
   --primary: #52151B;
   --secondary: #97263C;
-  --floor: 8.4rem;
+  --floor: 6.4rem;
   --natal: #DAA573;
   --fontPadrao: montserrat, sans-serif;
   --fontNatal: 'playfair-display', serif;
   --alturaCirculo: 7.6rem;
+  --cloud: 7.68rem;
 }
 
 * {
@@ -72,34 +73,32 @@ input {
 .cloud {
   position: absolute;
   width: 100%;
-  height: 6rem;
+  height: var(--cloud);
   background: url('../img/estrelas.svg');
   background-repeat: repeat-x;
+  &-animation {
+    position: absolute;
+    width: 100vw;
+    height: var(--cloud);
+    top: 0;
+  
+    background: url('../img/estrelas-animation.svg');
+    background-repeat: repeat-x;
+    opacity: 1;
+    z-index: 1;
+    transition: all 5s ease-in;
+    animation: blink-animation 5s infinite;
+    -webkit-animation: blink-animation 5s steps(5, start) infinite;
+  }
+  &-padding {
+    padding-top: calc(var(--cloud) - 82px);
+  }
 }
 
-
-.cloud-animation {
-  position: absolute;
-  width: 100vw;
-  height: 123px;
-  top: 0;
-
-  background: url('../img/estrelas-animation.svg');
-  background-repeat: repeat-x;
-  opacity: 1;
-  z-index: 1;
-  transition: all 5s ease-in;
-  animation: blink-animation 5s infinite;
-  -webkit-animation: blink-animation 5s steps(5, start) infinite;
+.z-index {
+  z-index: 9;
 }
 
-.logoSmall {
-  width: 100%;
-  height: 10.2rem;
-  background: url('../img/logoSmall.svg') no-repeat;
-  background-position: center center;
-  top: 6.2rem;
-}
 
 .fireworks-container {
   position: absolute;
@@ -181,7 +180,7 @@ input {
     flex: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100vw;
     height: 100vh;
 
@@ -190,33 +189,8 @@ input {
 }
 
 
-.topTexto {
-  margin-top: -1.25rem;
-}
-
-
 .texto {
   width: 100%;
-
-  .titulo {
-    width: 60%;
-    font-family: var(--fontNatal);
-    color: var(--natal);
-    font-size: 1.8rem;
-    line-height: 1.1;
-    margin-bottom: .8rem;
-  }
-
-  .subtitulo {
-    width: 60%;
-    font-family: var(--fontNatal);
-    color: var(--natal);
-    font-size: 1.43rem;
-    line-height: 1.1;
-    margin-bottom: .8rem;
-    font-weight: bold;
-  }
-
   p {
     font-size: .92rem;
     width: 70%;
@@ -229,6 +203,24 @@ input {
   }
 }
 
+.titulo {
+  width: 80%;
+  font-family: var(--fontNatal);
+  color: var(--natal);
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.subtitulo {
+  width: 60%;
+  font-family: var(--fontNatal);
+  color: var(--natal);
+  font-size: 1.43rem;
+  line-height: 1.1;
+  margin-bottom: .8rem;
+  font-weight: bold;
+}
+
 
 .abertura {
   width: 100%;
@@ -239,9 +231,8 @@ input {
   align-items: center;
 
   .logo {
-    position: absolute;
-    width: 218px;
-    margin-top: -20rem;
+    width: 13.62rem;
+    padding-top: calc(var(--cloud) - 62px);
   }
 
   .tangua {
@@ -250,11 +241,8 @@ input {
     height: auto;
     bottom: calc(var(--floor) - 3px);
   }
-
-  .texto {
-    margin-top: 12rem;
-  }
 }
+
 
 .scene2 {
   .arvoreNatal {
@@ -276,7 +264,7 @@ input {
 .scene5 {
   .parqueNautico {
     width: 100%;
-    bottom: 0;
+    bottom: calc(var(--floor) - 9.9rem);
   }
 }
 
@@ -348,6 +336,12 @@ input {
   .musica {
     width: 82%;
     bottom: calc(var(--floor) - 3px);
+  }
+}
+
+.scene15 {
+  .logo {
+    width: 13.62rem;
   }
 }
 
@@ -593,6 +587,13 @@ circle:nth-child(2) {
 
 @media only screen and (min-width: 981px) {
   $larguraLG: 42rem;
+  $cloudH: 7.23rem;
+
+  // .texto {
+  //   p {
+  //     width: 30%;
+  //   }
+  // }
 
   .topTexto {
     margin-top: -11.25rem;
@@ -603,13 +604,13 @@ circle:nth-child(2) {
   }
 
   .abertura {
-    .logo {
-      margin-top: -24rem;
-    }
+    // .logo {
+    //   margin-top: -24rem;
+    // }
 
-    .texto {
-      margin-top: 4rem;
-    }
+    // .texto {
+    //   margin-top: 4rem;
+    // }
 
     .tangua {
       width: $larguraLG;
@@ -625,20 +626,19 @@ circle:nth-child(2) {
 
   .scene4 {
     .passeio {
-      width: calc($larguraLG - 80px);
-      // width: $larguraLG;
+      width: calc($larguraLG - 140px);
     }
   }
 
   .scene5 {
     .parqueNautico {
-      bottom: -16.52rem;
+      bottom: calc(var(--floor) - 36.45rem);
     }
   }
 
   .scene6 {
     .palacioAvenida {
-      width: $larguraLG;
+      width: 35.2rem;
     }
   }
 
@@ -690,8 +690,50 @@ circle:nth-child(2) {
   }
 
   .scene15 {
+    .logo {
+      width: 13.62rem;
+      margin-top: calc(var(--cloud) - 62px);
+    }
     .topTexto {
       margin-top: .75rem;
     }
   }
+}
+
+// ==> ANIMACOES <== //
+.ani-wave {
+  animation: wave 20s -1s linear infinite;
+}
+
+.ani-arbustos {
+  animation: arbustos 8s -1s linear infinite;
+}
+
+
+@keyframes wave {
+  0% {transform: translateX(0);}
+  25% {transform: translateX(-5%);}
+  50% {transform: translateX(5%);}
+  100% {transform: translateX(0%);}
+}
+
+@-webkit-keyframes wave {
+  0% {transform: translateX(0);}
+  25% {transform: translateX(-5%);}
+  50% {transform: translateX(5%);}
+  100% {transform: translateX(0%);}
+}
+
+@keyframes arbustos {
+  0% {transform: translateX(0);}
+  25% {transform: translateY(-4px);}
+  50% {transform: translateX(4px);}
+  100% {transform: translateX(0%);}
+}
+
+@-webkit-keyframes arbustos {
+  0% {transform: translateX(0);}
+  25% {transform: translateY(-4px);}
+  50% {transform: translateX(4px);}
+  100% {transform: translateX(0%);}
 }

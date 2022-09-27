@@ -1,5 +1,5 @@
 // Register scrollTrigger
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 // Get all .js-pinned-images
 // const pinnedImageWrappers = document.querySelectorAll('.js-wrap');
@@ -107,7 +107,7 @@ if (pinnedImageWrappers) {
     const inner = wrapper.querySelector('.js-inner');
     const arbustos = document.querySelector('.arbustos > span');
     const araucaria = document.querySelector('.araucaria > span');
-    const logoSmall = document.querySelectorAll('.logoSmall');
+    // const logoSmall = document.querySelectorAll('.logoSmall');
     const passeio = document.querySelector('.passeio');
     const parqueNautico = document.querySelector('.parqueNautico');
     const parqueTangua = document.querySelector('.parqueTangua');
@@ -123,13 +123,13 @@ if (pinnedImageWrappers) {
 
     let duration = 10,
       sections = gsap.utils.toArray(".scene"),
-      sectionIncrement = duration / (sections.length - 1),
+      // sectionIncrement = duration / (sections.length - 1),
       tl = gsap.timeline({
         scrollTrigger: {
           trigger: wrapper,
           pin: true,
           scrub: 1,
-          snap: 1 / (sections.length - 1),
+          // snap: 1 / (sections.length - 1),
           start: "top top",
           end: () => `+=${inner.offsetWidth}`
         }
@@ -173,10 +173,10 @@ if (pinnedImageWrappers) {
     })
 
 
-    gsap.to(logoSmall, {
-      position: 'absolute',
-      start: 'bottom'
-    });
+    // gsap.to(logoSmall, {
+    //   position: 'absolute',
+    //   start: 'bottom'
+    // });
 
     gsap.to(passeio, {
       position: 'absolute',

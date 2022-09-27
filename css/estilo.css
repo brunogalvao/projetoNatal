@@ -2,11 +2,12 @@
 :root {
   --primary: #52151B;
   --secondary: #97263C;
-  --floor: 8.4rem;
+  --floor: 6.4rem;
   --natal: #DAA573;
   --fontPadrao: montserrat, sans-serif;
   --fontNatal: "playfair-display", serif;
   --alturaCirculo: 7.6rem;
+  --cloud: 7.68rem;
 }
 
 * {
@@ -65,15 +66,14 @@ input {
 .cloud {
   position: absolute;
   width: 100%;
-  height: 6rem;
+  height: var(--cloud);
   background: url("../img/estrelas.svg");
   background-repeat: repeat-x;
 }
-
 .cloud-animation {
   position: absolute;
   width: 100vw;
-  height: 123px;
+  height: var(--cloud);
   top: 0;
   background: url("../img/estrelas-animation.svg");
   background-repeat: repeat-x;
@@ -83,13 +83,12 @@ input {
   animation: blink-animation 5s infinite;
   -webkit-animation: blink-animation 5s steps(5, start) infinite;
 }
+.cloud-padding {
+  padding-top: calc(var(--cloud) - 82px);
+}
 
-.logoSmall {
-  width: 100%;
-  height: 10.2rem;
-  background: url("../img/logoSmall.svg") no-repeat;
-  background-position: center center;
-  top: 6.2rem;
+.z-index {
+  z-index: 9;
 }
 
 .fireworks-container {
@@ -165,35 +164,14 @@ input {
   flex: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100vw;
   height: 100vh;
   border-left: 1px solid white;
 }
 
-.topTexto {
-  margin-top: -1.25rem;
-}
-
 .texto {
   width: 100%;
-}
-.texto .titulo {
-  width: 60%;
-  font-family: var(--fontNatal);
-  color: var(--natal);
-  font-size: 1.8rem;
-  line-height: 1.1;
-  margin-bottom: 0.8rem;
-}
-.texto .subtitulo {
-  width: 60%;
-  font-family: var(--fontNatal);
-  color: var(--natal);
-  font-size: 1.43rem;
-  line-height: 1.1;
-  margin-bottom: 0.8rem;
-  font-weight: bold;
 }
 .texto p {
   font-size: 0.92rem;
@@ -205,6 +183,24 @@ input {
   font-weight: 600;
 }
 
+.titulo {
+  width: 80%;
+  font-family: var(--fontNatal);
+  color: var(--natal);
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.subtitulo {
+  width: 60%;
+  font-family: var(--fontNatal);
+  color: var(--natal);
+  font-size: 1.43rem;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
 .abertura {
   width: 100%;
   height: 100%;
@@ -213,18 +209,14 @@ input {
   align-items: center;
 }
 .abertura .logo {
-  position: absolute;
-  width: 218px;
-  margin-top: -20rem;
+  width: 13.62rem;
+  padding-top: calc(var(--cloud) - 62px);
 }
 .abertura .tangua {
   position: absolute;
   width: 85%;
   height: auto;
   bottom: calc(var(--floor) - 3px);
-}
-.abertura .texto {
-  margin-top: 12rem;
 }
 
 .scene2 .arvoreNatal {
@@ -242,7 +234,7 @@ input {
 
 .scene5 .parqueNautico {
   width: 100%;
-  bottom: 0;
+  bottom: calc(var(--floor) - 9.9rem);
 }
 
 .scene6 .texto {
@@ -305,6 +297,10 @@ input {
 .scene12 .musica {
   width: 82%;
   bottom: calc(var(--floor) - 3px);
+}
+
+.scene15 .logo {
+  width: 13.62rem;
 }
 
 @keyframes blink-animation {
@@ -483,12 +479,6 @@ circle:nth-child(2) {
   .logoCTBA {
     bottom: 1.58rem;
   }
-  .abertura .logo {
-    margin-top: -24rem;
-  }
-  .abertura .texto {
-    margin-top: 4rem;
-  }
   .abertura .tangua {
     width: 42rem;
   }
@@ -497,13 +487,13 @@ circle:nth-child(2) {
     right: -15rem;
   }
   .scene4 .passeio {
-    width: calc(42rem - 80px);
+    width: calc(42rem - 140px);
   }
   .scene5 .parqueNautico {
-    bottom: -16.52rem;
+    bottom: calc(var(--floor) - 36.45rem);
   }
   .scene6 .palacioAvenida {
-    width: 42rem;
+    width: 35.2rem;
   }
   .scene7 .rodaGigante {
     width: 30rem;
@@ -534,7 +524,77 @@ circle:nth-child(2) {
   .scene12 .musica {
     width: calc(42rem - 120px);
   }
+  .scene15 .logo {
+    width: 13.62rem;
+    margin-top: calc(var(--cloud) - 62px);
+  }
   .scene15 .topTexto {
     margin-top: 0.75rem;
+  }
+}
+.ani-wave {
+  -webkit-animation: wave 20s -1s linear infinite;
+          animation: wave 20s -1s linear infinite;
+}
+
+.ani-arbustos {
+  -webkit-animation: arbustos 8s -1s linear infinite;
+          animation: arbustos 8s -1s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes arbustos {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes arbustos {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }/*# sourceMappingURL=estilo.css.map */

@@ -17,6 +17,8 @@
     <!-- estilo -->
     <link rel="stylesheet" href="./css/estilo.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <!-- CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
@@ -33,7 +35,7 @@
 
         <div class="cloud"></div>
         <div class="cloud-animation"></div>
-        <div class="araucaria"><span></span></div>
+        <div class="araucaria ani-arbustos"><span></span></div>
         <div class="floor"></div>
 
         <div class="arbustos"><span></span></div>
@@ -61,13 +63,19 @@
                                 style="background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">
                             </div>
 
-                            <!-- logo     -->
-                            <img class="logo" src="./img/logo.png" />
+                            <div class="row z-index d-flex justify-content-center flex-column align-items-center">
+                                <!-- logo     -->
+                                <img class="logo" src="./img/logo.png" />
 
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="subtitulo text-center">É chegada a hora de comemorar. </div>
-                                <p class="text-white text-center">Dar uma pausa na pressa, nas telas, nos compromissos e
-                                    curtir um momento único e tão esperando o ano inteiro: <br> <b>o Natal</b>.</p>
+                                <div class="col">
+                                    <div class="texto d-flex justify-content-center flex-column align-items-center">
+                                        <div class="subtitulo text-center">É chegada a hora de comemorar. </div>
+                                        <p class="text-white text-center">Dar uma pausa na pressa, nas telas, nos
+                                            compromissos e
+                                            curtir um momento único e tão esperando o ano inteiro: <br> <b>o Natal</b>.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
 
                             <img class="tangua" src="./img/tangua.svg" alt="parque tangua" />
@@ -75,112 +83,161 @@
                         </div>
 
                         <!-- scene 2 -->
-                        <div class="scene scene2 d-flex flex-column" id="scene2">
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
+                        <div class="scene scene2 cloud-padding d-flex flex-column" id="scene2">
+                            <div class="row">
+                                <div class="col-12 justify-content-center">
 
-                                <div class="logoSmall"></div>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
 
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3"> o Natal mais
+                                        iluminado do Brasil </div>
 
-                                <div class="titulo text-white text-center fst-italic"> o Natal mais iluminado do Brasil
                                 </div>
 
-                                <!-- <div class="subtitulo">testando</div> -->
+                                <div class="col-10 offset-0 col-lg-6 offset-lg-3 pt-3">
+                                    <div class="mx-4 mx-lg-0">
+                                        <p class="text-white text-start text-lg-center">Desde 2017, o Natal de Curitiba
+                                            ganha as ruas e avenidas, praças e parques, assistido por milhares de
+                                            pessoas todos os anos, tornando-se um evento internacional.</p>
 
-                                <p class="text-white text-start mt-4 mt-lg-0">Desde 2017, o Natal de Curitiba ganha as ruas e
-                                    avenidas, praças e parques, assistido por milhares de pessoas todos os anos,
-                                    tornando-se um evento internacional.</p>
-
-                                <button class="btn-natal">saiba mais</button>
+                                        <button class="btn-natal">saiba mais</button>
+                                    </div>
+                                </div>
                             </div>
 
-                            <img class="arvoreNatal" src="./img/arvoreNatal.svg" alt="Arvore de Natal">
+                            <img class="arvoreNatal ani-wave" src="./img/arvoreNatal.svg" alt="Arvore de Natal">
                         </div>
 
                         <!-- scene 3 -->
-                        <div class="scene scene3 d-flex flex-column" id="scene3">
+                        <div class="scene scene3 cloud-padding d-flex flex-column" id="scene3">
 
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
+                            <div class="row">
+                                <div class="col-12 justify-content-center">
 
-                                <div class="logoSmall"></div>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
 
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">com luzes e
+                                        alegria </div>
 
-                                <div class="titulo text-white text-center fst-italic mt-4"> com luzes e alegria </div>
+                                    <div class="subtitulo text-center mx-auto pt-2">Árvores de Natal</div>
 
-                                <div class="subtitulo text-end">Árvores de Natal</div>
+                                </div>
 
-                                <p class="text-white text-end mt-4 mt-lg-0">Com as já tradicionais Árvores Iluminadas, o Natal ganha as ruas e avenidas, praças e parques, fazendo brilhar os olhos e o coração das pessoas.</p>
+                                <div class="col-10 offset-2 col-lg-6 offset-lg-3 pt-3">
+                                    <div class="mx-4 mx-lg-0 d-flex align-items-end flex-column">
+                                        <p class="text-white text-end text-lg-center">Com as já tradicionais Árvores
+                                            Iluminadas, o Natal ganha as ruas e avenidas, praças e parques, fazendo
+                                            brilhar os olhos e o coração das pessoas.</p>
 
-                                <button class="btn-natal">saiba mais</button>
+                                        <button class="btn-natal">saiba mais</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- scene 4 -->
-                        <div class="scene d-flex flex-column scene4" id="scene4">
-                            <div class="logoSmall"></div>
+                        <div class="scene scene4 cloud-padding d-flex flex-column" id="scene4">
 
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">a nossa história</div>
-                                <div class="subtitulo text-center">Passeio Público</div>
-                                <p class="text-white text-center">Primeiro parque da cidade, o Passeio Público recebe
-                                    uma programação natalina especial e ainda tem o Auto de Natal na Ilha dos Poetas.
-                                </p>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3"> a nossa história
+                                    </div>
+                                    <div class="subtitulo text-center mx-auto">Passeio Público</div>
+                                </div>
+
+                                <div class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">Primeiro parque da cidade, o
+                                        Passeio Público recebe uma programação natalina especial e ainda tem o Auto
+                                        de Natal na Ilha dos Poetas.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
-
                             <img class="passeio" src="./img/passeioPublico.svg" alt="passeio público" />
+
                         </div>
 
                         <!-- scene 5 -->
-                        <div class="scene scene5 d-flex flex-column">
+                        <div class="scene scene5 cloud-padding d-flex flex-column">
 
-                            <div class="logoSmall"></div>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
 
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">na nossa <br> natureza</div>
-                                <div class="subtitulo text-center">Autos de Natal</div>
-                                <p class="text-white text-center">Uma superprodução a céu aberto reúne atores, cantores
-                                    e bailarinos que tomam conta dos Parques Barigui, Tanguá e Náutico para contar a
-                                    história do nascimento de Jesus.</p>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3"> na nossa
+                                        natureza </div>
+                                    <div class="subtitulo text-center mx-auto">Autos de Natal</div>
+                                </div>
+
+                                <div class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">Uma superprodução a céu aberto
+                                        reúne atores, cantores e bailarinos que tomam conta dos Parques Barigui,
+                                        Tanguá e Náutico para contar a história do nascimento de Jesus.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="parqueNautico" src="./img/parqueNautico2.svg" alt="parque nautico" />
                         </div>
 
                         <!-- scene 6 -->
-                        <div class="scene scene6 d-flex flex-column">
-                            <div class="logoSmall"></div>
+                        <div class="scene scene6 cloud-padding d-flex flex-column">
 
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">com anjinhos <br>nas janelas</div>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
 
-                                <div class="subtitulo text-center mt-2 text-lg-end">Palácio Avenida</div>
-                                <p class="text-white text-center text-lg-end">Um dos mais tradicionais espetáculos de Natal do país,
-                                    o Coral de crianças do Palácio Avenida reúne música, luz, muita emoção e noites
-                                    inesquecíveis.</p>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3"> com anjinhos
+                                        <br>nas janelas
+                                    </div>
+                                    <div class="subtitulo text-center mx-auto">Palácio Avenida</div>
+                                </div>
+
+                                <div class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">Um dos mais tradicionais
+                                        espetáculos de
+                                        Natal do país, o Coral de crianças do Palácio Avenida reúne música, luz,
+                                        muita emoção e noites inesquecíveis.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="palacioAvenida" src="./img/palacioAvenida.svg" alt="Palacio Avenida" />
                         </div>
 
                         <!-- scene 7 -->
-                        <div class="scene scene7 d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">em um cenário de sonho</div>
-                            </div>
+                        <div class="scene scene7 cloud-padding d-flex flex-column">
 
-                            <div class="texto d-flex justify-content-start flex-column align-items-start px-4">
-                                <div class="subtitulo text-start mt-2">Oratório de Natal <br>no Tanguá</div>
-                                <p class="text-white text-start">Um espetáculo a céu aberto que reúne atores, cantores e
-                                    bailarinos para contar a história de Jesus usando como cenário o impressionante
-                                    Parque Tanguá.</p>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3"> em um cenário de
+                                        sonho </div>
+                                    <div class="subtitulo text-center mx-auto">Oratório de Natal no Tanguá</div>
+                                </div>
+
+                                <div class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-start text-lg-center">Um espetáculo a céu aberto que
+                                        reúne atores, cantores e bailarinos para contar a história de Jesus usando
+                                        como cenário o impressionante Parque Tanguá.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="parqueTangua" src="./img/tangua.svg" alt="Parque Tanguá" />
@@ -189,37 +246,52 @@
                         </div>
 
                         <!-- scene 8 -->
-                        <div class="scene scene8 d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">do alto</div>
-                            </div>
+                        <div class="scene scene8 cloud-padding d-flex flex-column">
 
-                            <div class="texto d-flex justify-content-end flex-column align-items-end px-4">
-                                <div class="subtitulo text-end mt-2">Roda-gigante na Praça Santos Andrade</div>
-                                <p class="text-white text-end">Imagine você de cima de uma roda-gigante de <b>22
-                                        metros</b> com uma visão privilegiada das decorações do centro da cidade.</p>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">do alto</div>
+                                    <div class="subtitulo text-center mx-auto">Roda-gigante na Praça Santos Andrade
+                                    </div>
+                                </div>
+
+                                <div class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-end text-lg-center">Imagine você de cima de uma
+                                        roda-gigante de 22 metros com uma visão privilegiada das decorações do
+                                        centro da cidade.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="federal" src="./img/federal.svg" alt="Praça Santos Andrade" />
                         </div>
 
                         <!-- scene 9 -->
-                        <div class="scene scene9 d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">como nos <br>tempos de criança
+                        <div class="scene scene9 cloud-padding d-flex flex-column">
+
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
+
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">como nos tempos
+                                        de criança</div>
+                                    <div class="subtitulo text-center mx-auto">Carrosel no Passeio Público</div>
                                 </div>
-                            </div>
 
-                            <div class="texto d-flex justify-content-start flex-column align-items-start px-4">
-                                <div class="subtitulo text-start mt-2">Carrosel <br> no Passeio Público</div>
-                                <p class="text-white text-start">Os tradicionais cavalinhos venezianos vão nos levar
-                                    para o passado e encantar crianças de todas as idades.</p>
+                                <div class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-start text-lg-center">Os tradicionais cavalinhos
+                                        venezianos vão nos levar para o passado e encantar crianças de todas as
+                                        idades.</p>
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="carrosselPasseio" src="./img/carrosselPasseio.svg"
@@ -229,100 +301,159 @@
                         </div>
 
                         <!-- scene 10 -->
-                        <div class="scene scene10 d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">no maior jardim de esculturas
-                                </div>
-                                <div class="subtitulo text-center mt-2">Ópera no Memorial Paranista</div>
-                                <p class="text-white text-center">Um cenário lúdico, onde os contornos de luz valorizam
-                                    a bela arquitetura do espaço e as esculturas em proporções heroicas de João Turin.
-                                </p>
+                        <div class="scene scene10 cloud-padding d-flex flex-column">
 
-                                <button class="btn-natal">saiba mais</button>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
+
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">no maior jardim
+                                        de esculturas</div>
+                                    <div class="subtitulo text-center mx-auto">Ópera no Memorial Paranista</div>
+                                </div>
+
+                                <div
+                                    class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">Um cenário lúdico, onde os
+                                        contornos de luz valorizam a bela arquitetura do espaço e as esculturas em
+                                        proporções heroicas de João Turin.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="memorialParanista" src="./img/memorialParanista.svg" alt="Memorial Paranista" />
                         </div>
 
                         <!-- scene 11 -->
-                        <div class="scene scene11 d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">em um lugar <br> surpreendente
+                        <div class="scene scene11 cloud-padding d-flex flex-column">
+
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
+
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">em um lugar
+                                        surpreendente</div>
+                                    <div class="subtitulo text-center mx-auto">Escola de Sustentabilidade</div>
                                 </div>
 
-                                <div class="subtitulo text-center mt-2">Escola de Sustentabilidade</div>
-                                <p class="text-white text-center">Em um espaço fantástico, um espetáculo em projeção
-                                    mapeada nos paredões da antiga pedreira será finalizado por um incrível show de
-                                    fogos.</p>
+                                <div
+                                    class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">Em um espaço fantástico, um
+                                        espetáculo em projeção mapeada nos paredões da antiga pedreira será
+                                        finalizado por um incrível show de fogos.</p>
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="escola" src="./img/escola.svg" alt="Escola de Sustentabilidade" />
                         </div>
 
                         <!-- scene 12 -->
-                        <div class="scene scene12 d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">com os ouvidos <br>e o coração
+                        <div class="scene scene12 cloud-padding d-flex flex-column">
+
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
+
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">com os ouvidos e
+                                        o coração</div>
+                                    <div class="subtitulo text-center mx-auto">Música</div>
                                 </div>
 
-                                <div class="subtitulo text-center mt-2">Música</div>
-                                <p class="text-white text-center">O espírito natalino toma conta das Ruas da Cidadania,
-                                    decoradas e com programação de espetáculos abertos ao público.</p>
+                                <div
+                                    class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">O espírito natalino toma conta
+                                        das Ruas da Cidadania, decoradas e com programação de espetáculos abertos ao
+                                        público.</p>
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
 
                             <img class="musica" src="./img/musica.svg" alt="Música">
                         </div>
 
                         <!-- scene 13 -->
-                        <div class="scene d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">provando delícias <br>curitibanas
+                        <div class="scene cloud-padding d-flex flex-column">
+
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
+
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">provando delícias
+                                        curitibanas</div>
+                                    <div class="subtitulo text-center mx-auto">Gastronomia</div>
                                 </div>
 
-                                <div class="subtitulo text-center mt-2">Gastronomia</div>
-                                <p class="text-white text-center">As feirinhas das praças Osório e Santos Andrade
-                                    oferecem comidas típicas, além de artesanato e produtos natalinos.</p>
+                                <div
+                                    class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <p class="text-white text-center text-lg-center">As feirinhas das praças Osório
+                                        e Santos Andrade oferecem comidas típicas, além de artesanato e produtos
+                                        natalinos.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+
+                                </div>
                             </div>
+
                         </div>
 
                         <!-- scene 14 -->
-                        <div class="scene d-flex flex-column">
-                            <div class="logoSmall"></div>
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <div class="titulo text-white text-center fst-italic">do seu jeito</div>
+                        <div class="scene cloud-padding d-flex flex-column">
 
-                                <div class="subtitulo text-center mt-2">Roteiros de Natal</div>
-                                <p class="text-white text-center">Roteiros para curtir a pé, de carro, de bicicleta, de
-                                    ônibus, com a galera. Clique aqui e escolha o seu roteiro.</p>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <img class="mx-auto d-block" width="180" src="./img/logoSmall.svg"
+                                        alt="Logo Natal de Curitiba" />
+
+                                    <div class="titulo text-white text-center fst-italic mx-auto pt-3">do seu jeito
+                                    </div>
+                                    <div class="subtitulo text-center mx-auto">Roteiros de Natal</div>
+                                </div>
+
+                                <div
+                                    class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">Roteiros para curtir a pé, de
+                                        carro, de bicicleta, de ônibus, com a galera. Clique aqui e escolha o seu
+                                        roteiro.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- scene 15 -->
-                        <div class="scene scene15 d-flex flex-column">
-                            <img width="220" class="logo" src="./img/logo.png" />
-                            <div class="texto topTexto d-flex justify-content-center flex-column align-items-center">
-                                <!-- <div class="titulo text-white text-center fst-italic">do seu jeito</div> -->
+                        <div class="scene scene15 cloud-padding d-flex flex-column">
 
-                                <div class="subtitulo text-center mt-2 mt-lg-5">Telefones e sites</div>
-                                <p class="text-white text-center">De interesse de turistas e público em geral.</p>
+                            <div class="row z-index">
+                                <div class="col-12 justify-content-center">
 
-                                <button class="btn-natal">saiba mais</button>
+                                    <img class="logo d-block mx-auto" src="./img/logo.png" />
+
+                                    <div class="subtitulo text-center mx-auto">Telefones e sites</div>
+                                </div>
+
+                                <div
+                                    class="col-10 offset-1 col-lg-6 offset-lg-3 pt-3 d-flex align-items-center justify-content-center flex-column">
+                                    <p class="text-white text-center text-lg-center">De interesse de turistas e público
+                                        em geral.</p>
+
+                                    <button class="btn-natal">saiba mais</button>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- <div class="scene">image placeholder final</div> -->
                     </div>
                 </div>
             </div>
