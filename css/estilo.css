@@ -69,6 +69,8 @@ input {
   height: var(--cloud);
   background: url("../img/estrelas.svg");
   background-repeat: repeat-x;
+  z-index: 0;
+  opacity: 0.5;
 }
 .cloud-animation {
   position: absolute;
@@ -78,10 +80,10 @@ input {
   background: url("../img/estrelas-animation.svg");
   background-repeat: repeat-x;
   opacity: 1;
-  z-index: 1;
   transition: all 5s ease-in;
   animation: blink-animation 5s infinite;
   -webkit-animation: blink-animation 5s steps(5, start) infinite;
+  z-index: 0;
 }
 .cloud-padding {
   padding-top: calc(var(--cloud) - 82px);
@@ -131,6 +133,7 @@ input {
 }
 .btn-natal:before {
   content: "......";
+  position: absolute;
   width: 32px;
   background: url("../img/btn-icon.svg") no-repeat;
   background-size: 22px;
