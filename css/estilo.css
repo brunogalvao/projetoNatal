@@ -200,7 +200,6 @@ input {
   color: var(--natal);
   font-size: 1.43rem;
   line-height: 1.1;
-  margin-bottom: 0.8rem;
   font-weight: bold;
 }
 
@@ -367,7 +366,12 @@ circle:nth-child(2) {
   transition: dashoffeset 0.05s ease-in-out;
 }
 
-@media only screen and (min-width: 500px) and (max-width: 980px) {
+/**
+
+==> Screen Size <==
+
+**/
+@media screen and (min-width: 767px) and (max-width: 1023px) {
   * {
     font-size: 18px;
   }
@@ -475,7 +479,7 @@ circle:nth-child(2) {
     left: 3rem;
   }
 }
-@media only screen and (min-width: 981px) {
+@media only screen and (min-width: 1024px) {
   .topTexto {
     margin-top: -11.25rem;
   }
@@ -493,7 +497,9 @@ circle:nth-child(2) {
     width: calc(42rem - 140px);
   }
   .scene5 .parqueNautico {
-    bottom: calc(var(--floor) - 36.45rem);
+    width: 1024px;
+    bottom: -19.5rem;
+    right: 0;
   }
   .scene6 .palacioAvenida {
     width: 35.2rem;
@@ -511,6 +517,7 @@ circle:nth-child(2) {
   .scene9 .cavaloCarrossel {
     width: 30rem;
     right: -15rem;
+    bottom: -1rem;
   }
   .scene9 .carrosselPasseio {
     width: 42rem;
@@ -535,14 +542,24 @@ circle:nth-child(2) {
     margin-top: 0.75rem;
   }
 }
+/**
+
+==> ANIMACOES <==
+
+**/
 .ani-wave {
   -webkit-animation: wave 20s -1s linear infinite;
           animation: wave 20s -1s linear infinite;
 }
 
-.ani-arbustos {
-  -webkit-animation: arbustos 8s -1s linear infinite;
-          animation: arbustos 8s -1s linear infinite;
+.ani-moveX {
+  -webkit-animation: moveX 8s -1s linear infinite;
+          animation: moveX 8s -1s linear infinite;
+}
+
+.ani--moveXhorse {
+  -webkit-animation: moveXHorse 4s -1s linear infinite;
+          animation: moveXHorse 4s -1s linear infinite;
 }
 
 @keyframes wave {
@@ -573,7 +590,7 @@ circle:nth-child(2) {
     transform: translateX(0%);
   }
 }
-@keyframes arbustos {
+@keyframes moveX {
   0% {
     transform: translateX(0);
   }
@@ -587,7 +604,7 @@ circle:nth-child(2) {
     transform: translateX(0%);
   }
 }
-@-webkit-keyframes arbustos {
+@-webkit-keyframes moveX {
   0% {
     transform: translateX(0);
   }
@@ -599,5 +616,33 @@ circle:nth-child(2) {
   }
   100% {
     transform: translateX(0%);
+  }
+}
+@keyframes moveXHorse {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateX(12px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes moveXHorse {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateX(12px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }/*# sourceMappingURL=estilo.css.map */

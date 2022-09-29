@@ -223,7 +223,6 @@ input {
   color: var(--natal);
   font-size: 1.43rem;
   line-height: 1.1;
-  margin-bottom: .8rem;
   font-weight: bold;
 }
 
@@ -424,7 +423,15 @@ circle:nth-child(2) {
   transition: dashoffeset .05s ease-in-out;
 }
 
-@media only screen and (min-width: 500px) and (max-width: 980px) {
+
+/**
+
+==> Screen Size <==
+
+**/
+
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
   * {
     font-size: 18px;
   }
@@ -591,15 +598,9 @@ circle:nth-child(2) {
   }
 }
 
-@media only screen and (min-width: 981px) {
+@media only screen and (min-width: 1024px) {
   $larguraLG: 42rem;
   $cloudH: 7.23rem;
-
-  // .texto {
-  //   p {
-  //     width: 30%;
-  //   }
-  // }
 
   .topTexto {
     margin-top: -11.25rem;
@@ -610,14 +611,6 @@ circle:nth-child(2) {
   }
 
   .abertura {
-    // .logo {
-    //   margin-top: -24rem;
-    // }
-
-    // .texto {
-    //   margin-top: 4rem;
-    // }
-
     .tangua {
       width: $larguraLG;
     }
@@ -638,7 +631,9 @@ circle:nth-child(2) {
 
   .scene5 {
     .parqueNautico {
-      bottom: calc(var(--floor) - 36.45rem);
+      width: 1024px;
+      bottom: -19.50rem;
+      right: 0; 
     }
   }
 
@@ -668,6 +663,7 @@ circle:nth-child(2) {
     .cavaloCarrossel {
       width: 30rem;
       right: -15rem;
+      bottom: -1rem;
     }
     .carrosselPasseio {
       width: $larguraLG;
@@ -706,13 +702,22 @@ circle:nth-child(2) {
   }
 }
 
-// ==> ANIMACOES <== //
+/**
+
+==> ANIMACOES <==
+
+**/
+
 .ani-wave {
   animation: wave 20s -1s linear infinite;
 }
 
-.ani-arbustos {
-  animation: arbustos 8s -1s linear infinite;
+.ani-moveX {
+  animation: moveX 8s -1s linear infinite;
+}
+
+.ani--moveXhorse {
+  animation: moveXHorse 4s -1s linear infinite;
 }
 
 
@@ -730,16 +735,39 @@ circle:nth-child(2) {
   100% {transform: translateX(0%);}
 }
 
-@keyframes arbustos {
+@keyframes moveX {
   0% {transform: translateX(0);}
   25% {transform: translateY(-4px);}
   50% {transform: translateX(4px);}
   100% {transform: translateX(0%);}
 }
 
-@-webkit-keyframes arbustos {
+@-webkit-keyframes moveX {
   0% {transform: translateX(0);}
   25% {transform: translateY(-4px);}
   50% {transform: translateX(4px);}
   100% {transform: translateX(0%);}
 }
+
+@keyframes moveXHorse {
+  0% {transform: translateX(0);}
+  25% {transform: translateY(-8px);}
+  50% {transform: translateX(12px);}
+  100% {transform: translateX(0px);}
+}
+
+@-webkit-keyframes moveXHorse {
+  0% {transform: translateX(0);}
+  25% {transform: translateY(-8px);}
+  50% {transform: translateX(12px);}
+  100% {transform: translateX(0px);}
+}
+
+// //mobile
+// @media screen and (max-width: 767px) {}
+
+// //tablet
+// @media screen and (min-width: 767px) and (max-width: 1023px) {}
+
+// //desktop
+// @media screen and (min-width: 1024px){}
